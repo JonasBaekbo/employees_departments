@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+    <link rel="stylesheet" th:href="@{style.css}"  type="text/css">
+</head>
+<body>
+<h1>An overview of our Employees</h1>
+<table>
+    <tr
+            th:each="employee : ${employees}">
+        <td th:text="${employee.getEmp_id()}"></td>
+        <td th:text="${employee.getEmp_name()}"></td>
+        <td th:text="${employee.getEmp_job()}"></td>
+        <td th:text="${employee.getEmp_departmentno()}"></td>
+        <td><button th:attr="onclick=|redirect('${employee.getEmp_id}')|">Read more</button></td>
+
+    </tr>
+</table>
+<script>
+    function redirect(id){
+        window.location.replace("http://localhost:8080/employee?id=" + id)
+
+    }
+</script>
+</body>
+</html>

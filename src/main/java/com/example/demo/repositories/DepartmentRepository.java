@@ -2,7 +2,6 @@ package com.example.demo.repositories;
 
 import com.example.demo.models.Department;
 import com.example.demo.utility.DatabaseConnectionManager;
-import com.mysql.cj.protocol.Resultset;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -41,6 +40,7 @@ public class DepartmentRepository implements IRepository<Department>{
 
     @Override
     public boolean create(Department entity) {
+
         return false;
     }
 }
